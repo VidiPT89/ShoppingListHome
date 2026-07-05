@@ -37,7 +37,7 @@ struct SplashView: View {
                 Spacer()
 
                 VStack(spacing: 6) {
-                    Text("David Arsénio Martins")
+                    Text("Developed by David Arsénio Martins")
                         .font(.footnote.weight(.medium))
                         .foregroundStyle(.white.opacity(0.65))
                     Link("github.com/VidiPT89", destination: URL(string: "https://github.com/VidiPT89")!)

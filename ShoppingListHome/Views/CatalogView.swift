@@ -43,19 +43,29 @@ struct CatalogView: View {
             .navigationTitle("catalog.title")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("catalog.close") { dismiss() }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    HStack(spacing: 10) {
+                        if totalSelected > 0 {
+                            (Text("\(totalSelected) ") + Text("catalog.in_list"))
+                                .font(.caption.weight(.semibold))
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 4)
+                                .background(Color.accentColor.opacity(0.15))
+                                .foregroundStyle(Color.accentColor)
+                                .clipShape(Capsule())
+                        }
+
+                        Button { dismiss() } label: {
+                            ZStack {
+                                Circle()
+                                    .fill(Color(.systemGray5))
+                                    .frame(width: 32, height: 32)
+                                Image(systemName: "xmark")
+                                    .font(.system(size: 12, weight: .bold))
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
                         .buttonStyle(.plain)
-                }
-                ToolbarItem(placement: .confirmationAction) {
-                    if totalSelected > 0 {
-                        (Text("\(totalSelected) ") + Text("catalog.in_list"))
-                            .font(.caption.weight(.semibold))
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 4)
-                            .background(Color.accentColor.opacity(0.15))
-                            .foregroundStyle(Color.accentColor)
-                            .clipShape(Capsule())
                     }
                 }
             }
