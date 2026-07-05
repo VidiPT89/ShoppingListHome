@@ -89,7 +89,7 @@ There is no backend to configure and no API key to add — the app works immedia
 - SwiftData was chosen over a cloud backend specifically to make the app a true zero-setup, zero-cost experience for anyone who clones it
 - The product catalog is a static, hand-picked list — no external API involved
 - Because there's no login, there's also no cross-device sync — each install has its own independent list
-- 🤖 Android version — planned, to be built with **Kotlin** in **Android Studio**, following the same free/offline approach
+- 🤖 Android version — see [ShoppingListHome_android](https://github.com/VidiPT89/ShoppingListHome_android), built natively in Kotlin + Jetpack Compose with the same feature set
 
 ---
 
