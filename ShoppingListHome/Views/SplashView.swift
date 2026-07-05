@@ -40,7 +40,7 @@ struct SplashView: View {
                     Text("Developed by David Arsénio Martins")
                         .font(.footnote.weight(.medium))
                         .foregroundStyle(.white.opacity(0.65))
-                    Link("github.com/VidiPT89", destination: URL(string: "https://github.com/VidiPT89")!)
+                    Link("ividi.dev", destination: URL(string: "https://ividi.dev/")!)
                         .font(.caption)
                         .foregroundStyle(.white.opacity(0.45))
                 }
