@@ -1,0 +1,44 @@
+/* Splash */
+"splash.subtitle" = "Your shopping list";
+
+/* Home */
+"home.empty.title" = "Empty list";
+"home.empty.subtitle" = "Tap + to add the first item";
+"home.section.tobuy" = "To buy";
+"home.section.incart" = "In cart";
+"home.loading" = "Loading...";
+"home.all" = "All";
+
+/* Add Item */
+"item.new" = "New item";
+"item.product" = "Product";
+"item.product.placeholder" = "Product name";
+"item.category" = "Category";
+"item.quantity" = "Quantity (optional)";
+"item.quantity.placeholder" = "E.g. 2";
+"item.unit" = "Unit";
+"item.add" = "Add";
+
+/* Categories */
+"cat.carnePeixe" = "Meat & Fish";
+"cat.vegetaisFruta" = "Vegetables & Fruit";
+"cat.laticinios" = "Dairy";
+"cat.padaria" = "Bakery";
+"cat.conservasSecos" = "Canned & Dry Goods";
+"cat.limpeza" = "Cleaning";
+"cat.higiene" = "Hygiene";
+"cat.bebidas" = "Drinks";
+"cat.snacks" = "Snacks";
+"cat.outros" = "Other";
+
+/* Settings */
+"settings.title" = "Settings";
+"settings.appearance" = "Appearance";
+"settings.theme" = "Theme";
+"settings.theme.system" = "System";
+"settings.theme.light" = "Light";
+"settings.theme.dark" = "Dark";
+"settings.language" = "Language";
+"settings.language.change" = "Change language";
+"settings.language.current" = "English";
+"settings.close" = "Close";

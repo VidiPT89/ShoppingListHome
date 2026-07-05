@@ -1,0 +1,44 @@
+/* Splash */
+"splash.subtitle" = "A tua lista de compras";
+
+/* Home */
+"home.empty.title" = "Lista vazia";
+"home.empty.subtitle" = "Toca no + para adicionar o primeiro item";
+"home.section.tobuy" = "Por comprar";
+"home.section.incart" = "No carrinho";
+"home.loading" = "A carregar...";
+"home.all" = "Tudo";
+
+/* Add Item */
+"item.new" = "Novo item";
+"item.product" = "Produto";
+"item.product.placeholder" = "Nome do produto";
+"item.category" = "Categoria";
+"item.quantity" = "Quantidade (opcional)";
+"item.quantity.placeholder" = "Ex: 2";
+"item.unit" = "Unidade";
+"item.add" = "Adicionar";
+
+/* Categories */
+"cat.carnePeixe" = "Carne & Peixe";
+"cat.vegetaisFruta" = "Vegetais & Fruta";
+"cat.laticinios" = "Laticínios";
+"cat.padaria" = "Padaria";
+"cat.conservasSecos" = "Conservas & Secos";
+"cat.limpeza" = "Limpeza";
+"cat.higiene" = "Higiene";
+"cat.bebidas" = "Bebidas";
+"cat.snacks" = "Snacks";
+"cat.outros" = "Outros";
+
+/* Settings */
+"settings.title" = "Definições";
+"settings.appearance" = "Aparência";
+"settings.theme" = "Tema";
+"settings.theme.system" = "Sistema";
+"settings.theme.light" = "Claro";
+"settings.theme.dark" = "Escuro";
+"settings.language" = "Idioma";
+"settings.language.change" = "Alterar idioma";
+"settings.language.current" = "Português (Portugal)";
+"settings.close" = "Fechar";
