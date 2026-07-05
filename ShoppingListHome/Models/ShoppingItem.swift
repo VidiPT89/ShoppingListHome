@@ -1,5 +1,6 @@
 import Foundation
 import SwiftData
+import SwiftUI
 
 @Model
 final class ShoppingItem {
@@ -47,6 +48,22 @@ enum ItemCategory: String, Codable, CaseIterable {
         case .bebidas: return "wineglass"
         case .snacks: return "popcorn"
         case .outros: return "shippingbox"
+        }
+    }
+
+    /// Key into Localizable.strings — display the category name via this, not `rawValue`.
+    var titleKey: LocalizedStringKey {
+        switch self {
+        case .carnePeixe: return "cat.carnePeixe"
+        case .vegetaisFruta: return "cat.vegetaisFruta"
+        case .laticinios: return "cat.laticinios"
+        case .padaria: return "cat.padaria"
+        case .conservasSecos: return "cat.conservasSecos"
+        case .limpeza: return "cat.limpeza"
+        case .higiene: return "cat.higiene"
+        case .bebidas: return "cat.bebidas"
+        case .snacks: return "cat.snacks"
+        case .outros: return "cat.outros"
         }
     }
 }

@@ -18,6 +18,18 @@
 "item.quantity.placeholder" = "E.g. 2";
 "item.unit" = "Unit";
 "item.add" = "Add";
+"item.cancel" = "Cancel";
+
+/* Actions */
+"action.delete" = "Delete";
+
+/* Catalog */
+"catalog.title" = "Catalog";
+"catalog.search.placeholder" = "Search product…";
+"catalog.close" = "Close";
+"catalog.in_list" = "in list";
+"catalog.no_results_prefix" = "No results for";
+"catalog.add_to_list" = "Add to list";
 
 /* Categories */
 "cat.carnePeixe" = "Meat & Fish";

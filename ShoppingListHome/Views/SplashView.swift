@@ -28,13 +28,24 @@ struct SplashView: View {
                     Text("ShoppingListHome")
                         .font(.system(size: 40, weight: .bold, design: .rounded))
                         .foregroundStyle(.white)
-                    Text("A tua lista de compras")
+                    Text("splash.subtitle")
                         .font(.subheadline)
                         .foregroundStyle(.white.opacity(0.75))
                 }
                 .opacity(textOpacity)
 
                 Spacer()
+
+                VStack(spacing: 6) {
+                    Text("David Arsénio Martins")
+                        .font(.footnote.weight(.medium))
+                        .foregroundStyle(.white.opacity(0.65))
+                    Link("github.com/VidiPT89", destination: URL(string: "https://github.com/VidiPT89")!)
+                        .font(.caption)
+                        .foregroundStyle(.white.opacity(0.45))
+                }
+                .opacity(textOpacity)
+                .padding(.bottom, 48)
             }
         }
         .onAppear {

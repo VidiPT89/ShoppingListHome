@@ -40,16 +40,16 @@ struct CatalogView: View {
                 }
             }
             .background(Color(.systemGroupedBackground))
-            .navigationTitle("Catálogo")
+            .navigationTitle("catalog.title")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Fechar") { dismiss() }
+                    Button("catalog.close") { dismiss() }
                         .buttonStyle(.plain)
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     if totalSelected > 0 {
-                        Text("\(totalSelected) na lista")
+                        (Text("\(totalSelected) ") + Text("catalog.in_list"))
                             .font(.caption.weight(.semibold))
                             .padding(.horizontal, 10)
                             .padding(.vertical, 4)
@@ -77,7 +77,7 @@ struct CatalogView: View {
                 .foregroundStyle(.secondary)
                 .font(.system(size: 15))
 
-            TextField("Pesquisar produto…", text: $searchText)
+            TextField("catalog.search.placeholder", text: $searchText)
                 .autocorrectionDisabled()
 
             if !searchText.isEmpty {
@@ -149,7 +149,7 @@ struct CatalogView: View {
                     .background(Color.accentColor.opacity(0.12))
                     .clipShape(RoundedRectangle(cornerRadius: 7))
 
-                Text(cat.rawValue)
+                Text(cat.titleKey)
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(.primary)
 
@@ -185,7 +185,7 @@ struct CatalogView: View {
             Image(systemName: "magnifyingglass")
                 .font(.system(size: 48))
                 .foregroundStyle(Color.accentColor.opacity(0.4))
-            Text("Sem resultados para \"\(searchText)\"")
+            (Text("catalog.no_results_prefix") + Text(" \"\(searchText)\""))
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
@@ -238,7 +238,7 @@ struct CatalogQuantitySheet: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(item.name)
                         .font(.headline)
-                    Text(item.category.rawValue)
+                    Text(item.category.titleKey)
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -317,7 +317,7 @@ struct CatalogQuantitySheet: View {
                 onAdd("\(quantity)", unit)
                 dismiss()
             } label: {
-                Text("Adicionar à lista")
+                Text("catalog.add_to_list")
                     .font(.headline)
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)

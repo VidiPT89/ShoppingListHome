@@ -18,6 +18,18 @@
 "item.quantity.placeholder" = "Ex: 2";
 "item.unit" = "Unidade";
 "item.add" = "Adicionar";
+"item.cancel" = "Cancelar";
+
+/* Actions */
+"action.delete" = "Apagar";
+
+/* Catalog */
+"catalog.title" = "Catálogo";
+"catalog.search.placeholder" = "Pesquisar produto…";
+"catalog.close" = "Fechar";
+"catalog.in_list" = "na lista";
+"catalog.no_results_prefix" = "Sem resultados para";
+"catalog.add_to_list" = "Adicionar à lista";
 
 /* Categories */
 "cat.carnePeixe" = "Carne & Peixe";

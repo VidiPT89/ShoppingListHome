@@ -84,11 +84,11 @@ struct HomeView: View {
     var categoryBar: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
-                chip(label: "Tudo", icon: "list.bullet", selected: selectedCategory == nil) {
+                chip(label: "home.all", icon: "list.bullet", selected: selectedCategory == nil) {
                     selectedCategory = nil
                 }
                 ForEach(ItemCategory.allCases, id: \.self) { cat in
-                    chip(label: cat.rawValue, icon: cat.icon, selected: selectedCategory == cat) {
+                    chip(label: cat.titleKey, icon: cat.icon, selected: selectedCategory == cat) {
                         selectedCategory = (selectedCategory == cat) ? nil : cat
                     }
                 }
@@ -99,7 +99,7 @@ struct HomeView: View {
         .background(Color(.systemBackground))
     }
 
-    func chip(label: String, icon: String, selected: Bool, action: @escaping () -> Void) -> some View {
+    func chip(label: LocalizedStringKey, icon: String, selected: Bool, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             HStack(spacing: 5) {
                 Image(systemName: icon).font(.caption)
@@ -127,13 +127,13 @@ struct HomeView: View {
                             .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                                 Button(role: .destructive) {
                                     listVM.deleteItem(item)
-                                } label: { Label("Apagar", systemImage: "trash") }
+                                } label: { Label("action.delete", systemImage: "trash") }
                             }
 
                             Divider().padding(.leading, 58)
                         }
                     } header: {
-                        sectionHeader("Por comprar", count: unchecked.count)
+                        sectionHeader("home.section.tobuy", count: unchecked.count)
                     }
                 }
 
@@ -146,13 +146,13 @@ struct HomeView: View {
                             .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                                 Button(role: .destructive) {
                                     listVM.deleteItem(item)
-                                } label: { Label("Apagar", systemImage: "trash") }
+                                } label: { Label("action.delete", systemImage: "trash") }
                             }
 
                             Divider().padding(.leading, 58)
                         }
                     } header: {
-                        sectionHeader("No carrinho", count: checked.count)
+                        sectionHeader("home.section.incart", count: checked.count)
                     }
                 }
             }
@@ -160,7 +160,7 @@ struct HomeView: View {
         }
     }
 
-    func sectionHeader(_ title: String, count: Int) -> some View {
+    func sectionHeader(_ title: LocalizedStringKey, count: Int) -> some View {
         HStack {
             Text(title)
                 .font(.footnote.weight(.semibold))
@@ -185,9 +185,9 @@ struct HomeView: View {
                 .foregroundStyle(Color.accentColor.opacity(0.35))
 
             VStack(spacing: 6) {
-                Text("Lista vazia")
+                Text("home.empty.title")
                     .font(.title3.weight(.semibold))
-                Text("Toca em + para adicionar o primeiro item")
+                Text("home.empty.subtitle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -266,7 +266,7 @@ struct ItemRow: View {
 
                 HStack(spacing: 5) {
                     Image(systemName: item.category.icon).font(.caption2)
-                    Text(item.category.rawValue).font(.caption)
+                    Text(item.category.titleKey).font(.caption)
                     if let q = item.quantity, !q.isEmpty {
                         Text("·").font(.caption).foregroundStyle(.tertiary)
                         Text(q + (item.unit.map { " \($0)" } ?? "")).font(.caption)

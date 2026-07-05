@@ -15,26 +15,26 @@ struct AddItemView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("Produto") {
-                    TextField("Nome do produto", text: $name)
+                Section("item.product") {
+                    TextField("item.product.placeholder", text: $name)
                         .focused($nameFocused)
                 }
 
-                Section("Categoria") {
-                    Picker("Categoria", selection: $category) {
+                Section("item.category") {
+                    Picker("item.category", selection: $category) {
                         ForEach(ItemCategory.allCases, id: \.self) { cat in
-                            Label(cat.rawValue, systemImage: cat.icon).tag(cat)
+                            Label(cat.titleKey, systemImage: cat.icon).tag(cat)
                         }
                     }
                     .pickerStyle(.navigationLink)
                 }
 
-                Section("Quantidade (opcional)") {
+                Section("item.quantity") {
                     HStack {
-                        TextField("Ex: 2", text: $quantity)
+                        TextField("item.quantity.placeholder", text: $quantity)
                             .keyboardType(.decimalPad)
                         Divider()
-                        Picker("Unidade", selection: $unit) {
+                        Picker("item.unit", selection: $unit) {
                             ForEach(units, id: \.self) { u in
                                 Text(u.isEmpty ? "—" : u).tag(u)
                             }
@@ -43,14 +43,14 @@ struct AddItemView: View {
                     }
                 }
             }
-            .navigationTitle("Novo item")
+            .navigationTitle("item.new")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancelar") { dismiss() }
+                    Button("item.cancel") { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Adicionar") {
+                    Button("item.add") {
                         let trimmed = name.trimmingCharacters(in: .whitespaces)
                         guard !trimmed.isEmpty else { return }
                         listVM.addItem(
